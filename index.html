@@ -20,9 +20,12 @@
                 Anvi<span class="text-gradient">Enterprises</span>
             </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#collections">Products</a></li>
+                <li><a href="#" class="text-gradient">Home</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/gifts.html">Gifts</a></li>
+                <li><a href="pages/printing.html">Custom Printing</a></li>
+                <li><a href="pages/showpieces.html">Show Pieces</a></li>
+                <li><a href="pages/kurties.html">Kurties</a></li>
             </ul>
             <div class="mobile-menu-btn" id="mobile-menu-btn">
                 <span></span>
@@ -40,8 +43,8 @@
             <h1>Curated Elegance, <br> <span class="text-gradient">Endless Possibilities</span></h1>
             <p>Your ultimate catalog for exquisite gifts, personalized printing, stunning show pieces, and beautiful kurties. We bring your vision to life without compromise.</p>
             <div class="hero-actions">
-                <a href="#collections" class="btn btn-primary">View Collection</a>
-                <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+                <a href="#categories" class="btn btn-primary">Top Categories</a>
+                <a href="pages/about.html" class="btn btn-secondary">Our Story</a>
             </div>
         </div>
     </header>
@@ -55,32 +58,30 @@
                 <p>Browse through our specialized ranges handpicked for quality and aesthetics.</p>
             </div>
             <div class="category-grid" id="category-container">
-                <!-- Categories injected by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Products / Collections Section -->
-    <section id="collections" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Available Products</h2>
-                <div class="underline"></div>
-                <p>No checkout required. Explore our premium inventory and find exactly what matches your taste.</p>
-            </div>
-            
-            <!-- Filters -->
-            <div class="filters" id="filter-controls">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="gifts">Gifts</button>
-                <button class="filter-btn" data-filter="printing">Custom Printing</button>
-                <button class="filter-btn" data-filter="showpieces">Show Pieces</button>
-                <button class="filter-btn" data-filter="kurties">Kurties</button>
-            </div>
-
-            <!-- Product Grid -->
-            <div class="product-grid" id="product-container">
-                <!-- Products injected by JS -->
+                <div class="category-card" onclick="window.location.href='pages/gifts.html'">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop" alt="Premium Gifts" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Premium Gifts</h3>
+                    </div>
+                </div>
+                <div class="category-card" onclick="window.location.href='pages/printing.html'">
+                    <img src="https://images.unsplash.com/photo-1562925562-1815db9768cd?q=80&w=800&auto=format&fit=crop" alt="Custom Printing" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Custom Printing</h3>
+                    </div>
+                </div>
+                <div class="category-card" onclick="window.location.href='pages/showpieces.html'">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop" alt="Show Pieces" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Show Pieces</h3>
+                    </div>
+                </div>
+                <div class="category-card" onclick="window.location.href='pages/kurties.html'">
+                    <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?q=80&w=800&auto=format&fit=crop" alt="Elegant Kurties" loading="lazy">
+                    <div class="category-overlay">
+                        <h3>Elegant Kurties</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -95,11 +96,12 @@
                 <p>Committed to providing premium quality products. Browse our catalog and experience the difference.</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
+                <h4>Categories</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#categories">Top Categories</a></li>
-                    <li><a href="#collections">All Products</a></li>
+                    <li><a href="pages/gifts.html">Premium Gifts</a></li>
+                    <li><a href="pages/printing.html">Custom Printing</a></li>
+                    <li><a href="pages/showpieces.html">Show Pieces</a></li>
+                    <li><a href="pages/kurties.html">Elegant Kurties</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
