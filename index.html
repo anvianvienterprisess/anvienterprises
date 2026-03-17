@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,38 +13,106 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
     <style>
-        html { scroll-behavior: smooth; }
-        .dropdown { position: relative; }
-        .dropdown-menu {
-            position: absolute; top: 100%; left: 0;
-            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border); border-radius: 8px;
-            padding: 10px 0; min-width: 250px;
-            opacity: 0; visibility: hidden; transform: translateY(10px);
-            transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        html {
+            scroll-behavior: smooth;
         }
-        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-menu li { display: block; }
-        .dropdown-menu a {
-            display: block; padding: 10px 20px; font-size: 0.9rem;
-            color: var(--text-main); transition: background 0.2s;
-        }
-        .dropdown-menu a:hover { background: var(--primary); color: #fff; }
-        
-        .section-title { font-size: 2.2rem; color: var(--text-main); margin-bottom: 20px; }
-        .category-section { padding: 60px 0; border-bottom: 1px solid var(--glass-border); }
-        .category-section:nth-child(even) { background-color: rgba(255,255,255,0.02); }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .about-img img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .category-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .category-section:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
         @media(max-width: 768px) {
-            .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: transparent; padding-left: 20px; display: none; }
-            .dropdown.active .dropdown-menu { display: block; }
-            .about-grid { grid-template-columns: 1fr; }
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+                padding-left: 20px;
+                display: none;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -85,16 +154,13 @@
         <div class="hero-content glass-effect">
             <span class="badge">Premium Coporate & Personal Solutions</span>
             <h1>One Stop For All <br> <span class="text-gradient">Your Dealings</span></h1>
-            <p>From Apparels and Uniforms to Electronics, Custom Gifting, and Beyond. Partner with Anvi Enterprises for unmatched quality and vast variety.</p>
+            <p>From Apparels and Uniforms to Electronics, Custom Gifting, and Beyond. Partner with Anvi Enterprises for
+                unmatched quality and vast variety.</p>
             <div class="hero-actions">
                 <a href="#services" class="btn btn-primary">Explore Services</a>
                 <a href="#about" class="btn btn-secondary">About Us</a>
             </div>
-            
-            <!-- Global Custom Name Input placed in hero for fun -->
-            <div style="margin-top: 30px; max-width: 300px; margin-inline: auto;">
-                <input type="text" id="global-name-input" class="custom-input glass-effect" placeholder="Type a name to preview on products..." style="text-align: center;">
-            </div>
+
         </div>
     </header>
 
@@ -107,12 +173,21 @@
             </div>
             <div class="about-grid">
                 <div>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--secondary);">Committed to Excellence</h3>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">Established with a vision to deliver premium lifestyle and corporate products, Anvi Enterprises offers a massive curated selection tailored exactly to your needs. We pride ourselves on having built solid relationships with the finest manufacturers to bring you unmatched variety without compromising quality.</p>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">Whether you're deeply outfitting an entire school with uniforms, sourcing high-end leather corporate gifts, passing out custom branded water bottles, or celebrating festivals with luxury dry fruit hampers, we have you covered end-to-end.</p>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--secondary);">Committed to Excellence
+                    </h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
+                        Established with a vision to deliver premium lifestyle and corporate products, Anvi Enterprises
+                        offers a massive curated selection tailored exactly to your needs. We pride ourselves on having
+                        built solid relationships with the finest manufacturers to bring you unmatched variety without
+                        compromising quality.</p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">Whether you're deeply
+                        outfitting an entire school with uniforms, sourcing high-end leather corporate gifts, passing
+                        out custom branded water bottles, or celebrating festivals with luxury dry fruit hampers, we
+                        have you covered end-to-end.</p>
                 </div>
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop" alt="Premium Retail">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop"
+                        alt="Corporate Team">
                 </div>
             </div>
         </div>
@@ -124,7 +199,7 @@
             <div class="section-header">
                 <h2>Our Services & Dealings</h2>
                 <div class="underline"></div>
-                <p>Browse through our 12 specialized categories below. Click any product to customize sizes, colors, and see a live preview of your text!</p>
+                <p>Browse through our specialized categories below. Click any product to view available sizes, quality options, and inquire for your needs!</p>
             </div>
         </div>
     </section>
@@ -134,17 +209,34 @@
         <div class="container">
             <h3 class="section-title">1. Apparels (T-shirts, Hoodies, Sports wear)</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Cotton T-Shirt', 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop', '100% breathable cotton.', true)">
+                <div class="product-card"
+                    onclick="openModal('Cotton T-Shirt', 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop', '100% breathable cotton basic tees.', true)">
                     <div class="product-img-wrapper" style="background: #e2e8f0;">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="T-Shirt">
-                        <div class="custom-text-overlay global-name-display">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Cotton T-Shirt</h3></div>
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop"
+                            alt="T-Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cotton T-Shirt</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Premium Hoodie', 'https://images.unsplash.com/photo-1555529733-0e670560f8e1?q=80&w=600&auto=format&fit=crop', 'Thick winter hoodie.', true)">
+                <div class="product-card"
+                    onclick="openModal('Premium Hoodie', 'images/hoodie.png', 'High quality plush winter hoodies.', true)">
                     <div class="product-img-wrapper" style="background: #fff;">
-                        <img src="https://images.unsplash.com/photo-1555529733-0e670560f8e1?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Hoodie">
-                        <div class="custom-text-overlay global-name-display">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Premium Hoodie</h3></div>
+                        <img src="images/hoodie.png" alt="Hoodie">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Hoodie</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Active Sports Wear', 'https://plus.unsplash.com/premium_photo-1727896376162-620ded0fce68?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3BvcnQlMjB3ZWFyfGVufDB8fDB8fHww', 'Breathable and sweat-wicking sports uniforms.', true)">
+                    <div class="product-img-wrapper" style="background: #fff;">
+                        <img src="https://plus.unsplash.com/premium_photo-1727896376162-620ded0fce68?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3BvcnQlMjB3ZWFyfGVufDB8fDB8fHww"
+                            alt="Sports Wear">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sports Wear</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,16 +247,24 @@
         <div class="container">
             <h3 class="section-title">2. Uniforms & Blazers</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('School/College Uniform', 'https://images.unsplash.com/photo-1580665961601-5285d3fdd13e?q=80&w=600&auto=format&fit=crop', 'Durable, stain-resistant uniform sets.', true)">
+                <div class="product-card"
+                    onclick="openModal('Institution Uniform', 'https://images.unsplash.com/photo-1566827886031-7d0f288f76ed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U2Nob29sJTIwJTI2JTIwQ29sbGVnZSUyMFVuaWZvcm1zfGVufDB8fDB8fHww', 'Custom uniforms for schools, colleges, and industrial staff.', true)">
                     <div class="product-img-wrapper" style="background: #fff;">
-                        <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Uniform">
-                        <div class="custom-text-overlay global-name-display" style="color:#000; text-shadow:none; opacity:0.7;">LOGO</div>
-                    </div><div class="product-info"><h3>Institution Uniforms</h3></div>
+                        <img src="https://images.unsplash.com/photo-1566827886031-7d0f288f76ed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U2Nob29sJTIwJTI2JTIwQ29sbGVnZSUyMFVuaWZvcm1zfGVufDB8fDB8fHww"
+                            alt="Uniform">
+                    </div>
+                    <div class="product-info">
+                        <h3>School & College Uniforms</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Corporate Blazer', 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=600&auto=format&fit=crop', 'Tailored fit executive blazers.', true)">
+                <div class="product-card"
+                    onclick="openModal('Industrial Safety Vest', 'images/safety_vest.png', 'High-visibility safety vests for industrial sites.', true)">
                     <div class="product-img-wrapper" style="background: #fff;">
-                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Blazer">
-                    </div><div class="product-info"><h3>Corporate Blazers</h3></div>
+                        <img src="images/safety_vest.png" alt="Safety Vest">
+                    </div>
+                    <div class="product-info">
+                        <h3>Safety Vests</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,11 +275,30 @@
         <div class="container">
             <h3 class="section-title">3. Electronic Products</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Power Banks', 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=600&auto=format&fit=crop', 'High capacity portable chargers.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=600&auto=format&fit=crop" alt="Power Bank"></div><div class="product-info"><h3>Power Banks</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Branded Power Bank', 'images/power_bank.png', 'High capacity portable chargers with custom corporate branding.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/power_bank.png"
+                            alt="Power Bank"></div>
+                    <div class="product-info">
+                        <h3>Corporate Power Banks</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Bluetooth Speakers', 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600&auto=format&fit=crop', 'Wireless premium speakers.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600&auto=format&fit=crop" alt="Speaker"></div><div class="product-info"><h3>Wireless Speakers</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Wireless Speakers', 'images/speaker.png', 'Premium crystal clear audio for a high-end experience.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/speaker.png"
+                            alt="Speaker"></div>
+                    <div class="product-info">
+                        <h3>Elite Speakers</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Elite Headphones', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop', 'Over-ear headphones with superior noise isolation and acoustics.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img
+                            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop"
+                            alt="Headphones"></div>
+                    <div class="product-info">
+                        <h3>Elite Headphones</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -190,8 +309,21 @@
         <div class="container">
             <h3 class="section-title">4. Trophies and Mementoes</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Crystal Trophy', 'https://images.unsplash.com/photo-1568227653556-32d88e0b96ac?q=80&w=600&auto=format&fit=crop', 'Elegant engraved crystal glass.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1568227653556-32d88e0b96ac?q=80&w=600&auto=format&fit=crop" alt="Trophy"></div><div class="product-info"><h3>Crystal Glass Trophy</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Victory Silver Trophy', 'images/silver_trophy.png', 'Classic silver trophies for sports and corporate awards.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/silver_trophy.png"
+                            alt="Trophy"></div>
+                    <div class="product-info">
+                        <h3>Victory Trophies</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Crystal Memento', 'images/crystal_memento.png', 'Elegant laser-engraved crystal awards for professional recognition.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/crystal_memento.png"
+                            alt="Memento"></div>
+                    <div class="product-info">
+                        <h3>Crystal Mementoes</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,17 +334,24 @@
         <div class="container">
             <h3 class="section-title">5. Pens and Pen Sets</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Executive Pen', 'https://images.unsplash.com/photo-1585336261022-680e295ce3fe?q=80&w=600&auto=format&fit=crop', 'Metallic ballpoint pen with laser-engraved names.', false)">
+                <div class="product-card"
+                    onclick="openModal('Metallic Executive Pen', 'https://images.unsplash.com/photo-1585336261022-680e295ce3fe?q=80&w=600&auto=format&fit=crop', 'Laser-engraved metallic finish executive pens.', false)">
                     <div class="product-img-wrapper" style="background: #fff;">
-                        <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Pen">
-                        <div class="custom-text-overlay global-name-display" style="font-size: 0.8rem; transform: translate(-50%, -50%) rotate(-45deg);">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Executive Pen Box</h3></div>
+                        <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?q=80&w=600&auto=format&fit=crop"
+                            alt="Pen">
+                    </div>
+                    <div class="product-info">
+                        <h3>Executive Pen</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Premium Pen Set', 'https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=80&w=600&auto=format&fit=crop', 'Twin set with rollerball and fountain pens.', false)">
+                <div class="product-card"
+                    onclick="openModal('Luxury Pen Set', 'images/pen_set.png', 'Elegant twin-pen set in a premium leatherette box.', false)">
                     <div class="product-img-wrapper" style="background: #fff;">
-                        <img src="https://images.unsplash.com/photo-1503694978374-8a2fa686963a?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Pen Set">
-                        <div class="custom-text-overlay global-name-display" style="font-size: 0.7rem;">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Premium Pen Sets</h3></div>
+                        <img src="images/pen_set.png" alt="Pen Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Pen Sets</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -223,14 +362,40 @@
         <div class="container">
             <h3 class="section-title" id="cat-custom-bags">6 & 7. Bags & Customised Bags (All Types)</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Laptop Backpack', 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop', 'Corporate laptop backpacks with logo print.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop" alt="Bag"></div><div class="product-info"><h3>Laptop Backpacks</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Business Backpack', 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop', 'Professional laptop backpacks for corporate commuters.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img
+                            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop"
+                            alt="Bag"></div>
+                    <div class="product-info">
+                        <h3>Laptop Backpacks</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Canvas Tote Bag', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop', 'Eco friendly canvas totes.', false)">
+                <div class="product-card"
+                    onclick="openModal('Executive Duffel', 'images/duffel_bag.png', 'Spacious leather travel bags for the discerning executive.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/duffel_bag.png"
+                            alt="Duffel Bag"></div>
+                    <div class="product-info">
+                        <h3>Executive Duffels</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Sustainable Jute Bag', 'images/jute_bag.png', 'High-quality eco-friendly jute bags for gifting and retail.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/jute_bag.png"
+                            alt="Jute Bag"></div>
+                    <div class="product-info">
+                        <h3>Sustainable Jute Bags</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Personalized Tote', 'https://images.unsplash.com/photo-1605733160314-4fc7dac4bb16?q=80&w=600&auto=format&fit=crop', 'Durable custom canvas tote bags with your unique text.', false)">
                     <div class="product-img-wrapper" style="background:#fff;">
-                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Tote">
-                        <div class="custom-text-overlay global-name-display" style="color: #1a202c; text-shadow: none;">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Custom Canvas Tote</h3></div>
+                        <img src="https://images.unsplash.com/photo-1727691038583-bd59f477bb4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFRvdGVzfGVufDB8fDB8fHww"
+                            alt="Tote">
+                    </div>
+                    <div class="product-info">
+                        <h3>Personalized Totes</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -241,16 +406,33 @@
         <div class="container">
             <h3 class="section-title">8. Customised Notebooks & Brochures</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Leather Diary', 'https://images.unsplash.com/photo-1583335513577-224b5ed3ef7e?q=80&w=600&auto=format&fit=crop', 'Premium embossed diaries.', false)">
+                <div class="product-card"
+                    onclick="openModal('Leather Notebook', 'https://images.unsplash.com/photo-1544816153-16ad467bc79c?q=80&w=600&auto=format&fit=crop', 'Genuine leaf-stashed leather journals with premium stitching.', false)">
                     <div class="product-img-wrapper" style="background:#fff;">
-                        <img src="https://images.unsplash.com/photo-1531346878377-a541e4b113fb?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Notebook">
-                        <div class="custom-text-overlay global-name-display" style="color: #ecc94b; text-shadow: 1px 1px 2px #000;">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Leather Bound Notebook</h3></div>
+                        <img src="https://images.unsplash.com/photo-1520970014086-2208d157c9e2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8TGVhdGhlciUyMG5vdGVib29rJTIwd2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww"
+                            alt="Notebook">
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Notebooks</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Corporate Brochure', 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=600&auto=format&fit=crop', 'Custom printed multi-page brochures.', false)">
+                <div class="product-card"
+                    onclick="openModal('Executive Diary', 'https://images.unsplash.com/photo-1506784919140-29205a2b158b?q=80&w=600&auto=format&fit=crop', 'Sleek professional planners for corporate use.', false)">
                     <div class="product-img-wrapper" style="background:#fff;">
-                        <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Brochure">
-                    </div><div class="product-info"><h3>Customised Brochures</h3></div>
+                        <img src="https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fERpYXJ5fGVufDB8fDB8fHww"
+                            alt="Diary">
+                    </div>
+                    <div class="product-info">
+                        <h3>Executive Diaries</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Company Brochure', 'images/brochure.png', 'Professional multipage brochures with high-quality offset print.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/brochure.png"
+                            alt="Brochure"></div>
+                    <div class="product-info">
+                        <h3>Company Brochures</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -261,11 +443,31 @@
         <div class="container">
             <h3 class="section-title">9. Leather Products</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Leather Wallet', 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop', 'Genuine leather wallets.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop" alt="Wallet"></div><div class="product-info"><h3>Executive Leather Wallets</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Leather Wallet', 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop', 'Genuine leaf-tashed leather wallets for business needs.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img
+                            src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop"
+                            alt="Wallet"></div>
+                    <div class="product-info">
+                        <h3>Leather Wallets</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Leather Briefcase', 'https://images.unsplash.com/photo-1554342872-034a06541bad?q=80&w=600&auto=format&fit=crop', 'Premium office leather briefcases.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1554342872-034a06541bad?q=80&w=600&auto=format&fit=crop" alt="Briefcase"></div><div class="product-info"><h3>Office Leather Briefcases</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Executive Belt', 'https://images.unsplash.com/photo-1711443982852-b3df5c563448?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEV4ZWN1dGl2ZSUyMEJlbHRzfGVufDB8fDB8fHww', 'Classic leather belts with polished metal buckles.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img
+                            src="https://images.unsplash.com/photo-1711443982852-b3df5c563448?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEV4ZWN1dGl2ZSUyMEJlbHRzfGVufDB8fDB8fHww"
+                            alt="Belt"></div>
+                    <div class="product-info">
+                        <h3>Executive Belts</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Leather Compendium', 'images/compendium.png', 'Boardroom-ready leather folders for documents and devices.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/compendium.png"
+                            alt="Compendium"></div>
+                    <div class="product-info">
+                        <h3>Leather Compendiums</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -276,17 +478,32 @@
         <div class="container">
             <h3 class="section-title">10. Mugs, Water Bottles & Table Tops</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Ceramic Mug', 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=600&auto=format&fit=crop', 'High quality ceramic mug.', false)">
+                <div class="product-card"
+                    onclick="openModal('Ceramic Mug', 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=600&auto=format&fit=crop', 'High quality ceramic mug.', false)">
                     <div class="product-img-wrapper" style="background:#fff;">
-                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Mug">
-                        <div class="custom-text-overlay global-name-display">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Custom Ceramic Mug</h3></div>
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=600&auto=format&fit=crop"
+                            alt="Mug">
+                    </div>
+                    <div class="product-info">
+                        <h3>Custom Ceramic Mug</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Thermos Flask', 'https://images.unsplash.com/photo-1606240228302-39fe3d29cfc5?q=80&w=600&auto=format&fit=crop', 'Hot/Cold insulated flasks.', false)">
-                    <div class="product-img-wrapper" style="background:#fff;">
-                        <img src="https://images.unsplash.com/photo-1606240228302-39fe3d29cfc5?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Flask">
-                        <div class="custom-text-overlay global-name-display" style="transform: translate(-50%, -20%) rotate(-85deg);">YOUR NAME</div>
-                    </div><div class="product-info"><h3>Insulated Water Bottles</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Endurance Bottle', 'https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Qm90dGxlc3xlbnwwfHwwfHx8MA%3D%3D', 'High-grade stainless steel sports and office bottles.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img
+                            src="https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Qm90dGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+                            alt="Bottle"></div>
+                    <div class="product-info">
+                        <h3>Endurance Bottles</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Executive Table Decor', 'images/table_decor.png', 'Premium table-top accessories and desk clocks.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/table_decor.png"
+                            alt="Table Top"></div>
+                    <div class="product-info">
+                        <h3>Table Top Decor</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -297,11 +514,21 @@
         <div class="container">
             <h3 class="section-title">11. Customised Festival Gifting</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Diwali Hamper', 'https://images.unsplash.com/photo-1582142839970-2b9e04b60f65?q=80&w=600&auto=format&fit=crop', 'Premium festive boxes.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1582142839970-2b9e04b60f65?q=80&w=600&auto=format&fit=crop" alt="Festive"></div><div class="product-info"><h3>Festive Gift Hampers</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Traditional Gifting', 'images/traditional_gift.png', 'Authentic Indian celebratory gifts and traditional decor.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/traditional_gift.png"
+                            alt="Traditional"></div>
+                    <div class="product-info">
+                        <h3>Traditional Gifting</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Silver Coin Gift', 'https://images.unsplash.com/photo-1605333333333-e1d533333333?q=80&w=600&auto=format&fit=crop', 'Custom silver encrusted corporate festive gifting.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?q=80&w=600&auto=format&fit=crop" alt="Silver Gifting"></div><div class="product-info"><h3>Luxury Corporate Hampers</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Premium Hamper', 'images/gift_hamper.png', 'Luxury curated boxes with a range of festive treats and gifts.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/gift_hamper.png"
+                            alt="Hamper"></div>
+                    <div class="product-info">
+                        <h3>Premium Hampers</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -312,11 +539,22 @@
         <div class="container">
             <h3 class="section-title">12. Chocolates and Dry Fruits</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Premium Dry Fruits', 'https://images.unsplash.com/photo-1596591606975-97eedd929c28?q=80&w=600&auto=format&fit=crop', 'High quality sorted nuts.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1596591606975-97eedd929c28?q=80&w=600&auto=format&fit=crop" alt="Nuts"></div><div class="product-info"><h3>Premium Dry Fruit Boxes</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Premium Dry Fruit Box', 'images/dry_fruit_box.png', 'Finest assortment of hand-picked seasonal dry fruits.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/dry_fruit_box.png"
+                            alt="Dry Fruits"></div>
+                    <div class="product-info">
+                        <h3>Premium Dry Fruit Boxes</h3>
+                    </div>
                 </div>
-                <div class="product-card" onclick="openModal('Truffle Chocolates', 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=600&auto=format&fit=crop', 'Artisanal chocolates.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=600&auto=format&fit=crop" alt="Chocolate"></div><div class="product-info"><h3>Assorted Chocolate Truffles</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Truffle Chocolates', 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=600&auto=format&fit=crop', 'Artisanal chocolates.', false)">
+                    <div class="product-img-wrapper"><img
+                            src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=600&auto=format&fit=crop"
+                            alt="Chocolate"></div>
+                    <div class="product-info">
+                        <h3>Assorted Chocolate Truffles</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -327,8 +565,21 @@
         <div class="container">
             <h3 class="section-title">13. Branded Electronic Goods</h3>
             <div class="product-grid">
-                <div class="product-card" onclick="openModal('Smart Watches', 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=600&auto=format&fit=crop', 'Branded smart wearables.', false)">
-                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=600&auto=format&fit=crop" alt="Watch"></div><div class="product-info"><h3>Branded Smart Watches</h3></div>
+                <div class="product-card"
+                    onclick="openModal('Tech Wearables', 'https://images.unsplash.com/photo-1617043786394-f977fa12eddf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Advanced branded smart watches with state-of-the-art tech.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="https://images.unsplash.com/photo-1617043786394-f977fa12eddf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Tech Wearables"></div>
+                    <div class="product-info">
+                        <h3>Tech Wearables</h3>
+                    </div>
+                </div>
+                <div class="product-card"
+                    onclick="openModal('Wireless Earbuds', 'images/earbuds.png', 'Top-tier branded audio for an elite experience.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;"><img src="images/earbuds.png"
+                            alt="Earbuds"></div>
+                    <div class="product-info">
+                        <h3>Elite Earbuds</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -341,13 +592,12 @@
             <div class="modal-left">
                 <div class="modal-image-container" id="modal-img-container">
                     <img id="modal-img" class="modal-image" src="" alt="Product Preview">
-                    <div class="modal-preview-text" id="modal-preview-text">YOUR NAME</div>
                 </div>
             </div>
             <div class="modal-right">
                 <h3 id="modal-title">Product Name</h3>
                 <p class="desc" id="modal-desc">Product description goes here.</p>
-                
+
                 <div class="form-group" id="size-group">
                     <label>Size Available</label>
                     <div class="options-flex options-group">
@@ -361,17 +611,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Color Available</label>
-                    <div class="options-flex">
-                        <div class="color-btn active" data-color="#ffffff" style="background: #ffffff; border-color:#000;"></div>
-                        <div class="color-btn" data-color="#e2e8f0" style="background: #e2e8f0;"></div>
-                        <div class="color-btn" data-color="#fca5a5" style="background: #fca5a5;"></div>
-                        <div class="color-btn" data-color="#93c5fd" style="background: #93c5fd;"></div>
-                        <div class="color-btn" data-color="#86efac" style="background: #86efac;"></div>
-                        <div class="color-btn" data-color="#fdba74" style="background: #fdba74;"></div>
-                        <div class="color-btn" data-color="#d8b4fe" style="background: #d8b4fe;"></div>
-                        <div class="color-btn" data-color="#1e293b" style="background: #1e293b;"></div>
-                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">🎨 Available in all
+                        colors</p>
                 </div>
 
                 <div class="form-group">
@@ -393,13 +634,11 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Custom Text</label>
-                    <input type="text" id="modal-custom-input" class="custom-input" placeholder="Enter text to visualize...">
-                </div>
 
                 <div class="modal-actions">
-                    <button class="btn btn-primary" onclick="alert('Inquiry ready to be sent to Anvi Enterprises!')">Inquire About This Product</button>
+                    <button class="btn btn-primary"
+                        onclick="alert('Inquiry ready to be sent to Anvi Enterprises!')">Inquire About This
+                        Product</button>
                 </div>
             </div>
         </div>
@@ -412,7 +651,8 @@
                 <a href="#home" class="logo">
                     Anvi<span class="text-gradient">Enterprises</span>
                 </a>
-                <p>Committed to providing premium quality products. Browse our catalog and experience the difference.</p>
+                <p>Committed to providing premium quality products. Browse our catalog and experience the difference.
+                </p>
             </div>
             <div class="footer-links">
                 <h4>Categories</h4>
@@ -445,29 +685,8 @@
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-desc');
         const imgContainer = document.getElementById('modal-img-container');
-        const modalPreviewText = document.getElementById('modal-preview-text');
-        const modalCustomInput = document.getElementById('modal-custom-input');
-        
-        const globalNameInput = document.getElementById('global-name-input');
-        const allCardOverlays = document.querySelectorAll('.global-name-display');
         const sizeGroup = document.getElementById('size-group');
-        let currentText = "YOUR NAME";
 
-        // Handle Global Input Event
-        if(globalNameInput) {
-            globalNameInput.addEventListener('input', (e) => {
-                currentText = e.target.value.trim() || 'YOUR NAME';
-                allCardOverlays.forEach(el => el.textContent = currentText);
-            });
-        }
-
-        // Handle Modal Input Event
-        modalCustomInput.addEventListener('input', (e) => {
-            currentText = e.target.value.trim() || 'YOUR NAME';
-            modalPreviewText.textContent = currentText;
-            if(globalNameInput) globalNameInput.value = e.target.value;
-            allCardOverlays.forEach(el => el.textContent = currentText);
-        });
 
         // Toggle Option buttons
         const optGroups = document.querySelectorAll('.options-group');
@@ -481,31 +700,17 @@
             });
         });
 
-        // Color selection
-        const colorBtns = document.querySelectorAll('.color-btn');
-        colorBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                colorBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                imgContainer.style.backgroundColor = btn.dataset.color;
-            });
-        });
+
 
         function openModal(title, imgSrc, desc, hasSizes) {
             modalTitle.textContent = title;
             modalImg.src = imgSrc;
             modalDesc.textContent = desc;
-            
-            // Sync current text to modal
-            modalPreviewText.textContent = currentText;
-            modalCustomInput.value = currentText !== 'YOUR NAME' ? currentText : '';
-            
+
+
             // Hide size option based on product
             sizeGroup.style.display = hasSizes ? 'block' : 'none';
 
-            // Reset color to white
-            colorBtns.forEach(b => b.classList.remove('active'));
-            colorBtns[0].classList.add('active');
             imgContainer.style.backgroundColor = '#ffffff';
 
             modal.classList.add('active');
@@ -523,4 +728,5 @@
         });
     </script>
 </body>
+
 </html>
