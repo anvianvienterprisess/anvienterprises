@@ -3,34 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anvi Enterprises | Premium Catalog</title>
-    <meta name="description" content="Discover premium gifts, custom printing, beautiful show pieces, and elegant kurties at Anvi Enterprises.">
+    <title>Anvi Enterprises | Corporate Offerings</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border); border-radius: 8px;
+            padding: 10px 0; min-width: 250px;
+            opacity: 0; visibility: hidden; transform: translateY(10px);
+            transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu li { display: block; }
+        .dropdown-menu a {
+            display: block; padding: 10px 20px; font-size: 0.9rem;
+            color: var(--text-main); transition: background 0.2s;
+        }
+        .dropdown-menu a:hover { background: var(--primary); color: #fff; }
+        
+        .section-title { font-size: 2.2rem; color: var(--text-main); margin-bottom: 20px; }
+        .category-section { padding: 60px 0; border-bottom: 1px solid var(--glass-border); }
+        .category-section:nth-child(even) { background-color: rgba(255,255,255,0.02); }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .about-img img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        @media(max-width: 768px) {
+            .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: transparent; padding-left: 20px; display: none; }
+            .dropdown.active .dropdown-menu { display: block; }
+            .about-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#home" class="logo">
                 Anvi<span class="text-gradient">Enterprises</span>
             </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#" class="text-gradient">Home</a></li>
-                <li><a href="pages/about.html">About</a></li>
-                <li><a href="pages/gifts.html">Gifts</a></li>
-                <li><a href="pages/printing.html">Custom Printing</a></li>
-                <li><a href="pages/showpieces.html">Show Pieces</a></li>
-                <li><a href="pages/kurties.html">Kurties</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#services">Services ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#cat-apparels">Apparels & Sportswear</a></li>
+                        <li><a href="#cat-uniforms">Uniforms & Blazers</a></li>
+                        <li><a href="#cat-electronics">Electronic Products</a></li>
+                        <li><a href="#cat-trophies">Trophies & Mementoes</a></li>
+                        <li><a href="#cat-pens">Pens & Pen Sets</a></li>
+                        <li><a href="#cat-bags">Bags (All Types)</a></li>
+                        <li><a href="#cat-custom-bags">Customised Bags</a></li>
+                        <li><a href="#cat-notebooks">Customised Notebooks</a></li>
+                        <li><a href="#cat-leather">Leather Products</a></li>
+                        <li><a href="#cat-mugs">Mugs & Table Tops</a></li>
+                        <li><a href="#cat-festival">Customised Festival Gifting</a></li>
+                        <li><a href="#cat-chocolate">Chocolates & Dry Fruits</a></li>
+                        <li><a href="#cat-branded-tech">Branded Electronic Goods</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="mobile-menu-btn" id="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
@@ -39,58 +83,316 @@
     <header id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content glass-effect">
-            <span class="badge">Discover Excellence</span>
-            <h1>Curated Elegance, <br> <span class="text-gradient">Endless Possibilities</span></h1>
-            <p>Your ultimate catalog for exquisite gifts, personalized printing, stunning show pieces, and beautiful kurties. We bring your vision to life without compromise.</p>
+            <span class="badge">Premium Coporate & Personal Solutions</span>
+            <h1>One Stop For All <br> <span class="text-gradient">Your Dealings</span></h1>
+            <p>From Apparels and Uniforms to Electronics, Custom Gifting, and Beyond. Partner with Anvi Enterprises for unmatched quality and vast variety.</p>
             <div class="hero-actions">
-                <a href="#categories" class="btn btn-primary">Top Categories</a>
-                <a href="pages/about.html" class="btn btn-secondary">Our Story</a>
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#about" class="btn btn-secondary">About Us</a>
+            </div>
+            
+            <!-- Global Custom Name Input placed in hero for fun -->
+            <div style="margin-top: 30px; max-width: 300px; margin-inline: auto;">
+                <input type="text" id="global-name-input" class="custom-input glass-effect" placeholder="Type a name to preview on products..." style="text-align: center;">
             </div>
         </div>
     </header>
 
-    <!-- Categories Section -->
-    <section id="categories" class="section">
+    <!-- About Section -->
+    <section id="about" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Our Categories</h2>
+                <h2>About Us</h2>
                 <div class="underline"></div>
-                <p>Browse through our specialized ranges handpicked for quality and aesthetics.</p>
             </div>
-            <div class="category-grid" id="category-container">
-                <div class="category-card" onclick="window.location.href='pages/gifts.html'">
-                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop" alt="Premium Gifts" loading="lazy">
-                    <div class="category-overlay">
-                        <h3>Premium Gifts</h3>
-                    </div>
+            <div class="about-grid">
+                <div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--secondary);">Committed to Excellence</h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">Established with a vision to deliver premium lifestyle and corporate products, Anvi Enterprises offers a massive curated selection tailored exactly to your needs. We pride ourselves on having built solid relationships with the finest manufacturers to bring you unmatched variety without compromising quality.</p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">Whether you're deeply outfitting an entire school with uniforms, sourcing high-end leather corporate gifts, passing out custom branded water bottles, or celebrating festivals with luxury dry fruit hampers, we have you covered end-to-end.</p>
                 </div>
-                <div class="category-card" onclick="window.location.href='pages/printing.html'">
-                    <img src="https://images.unsplash.com/photo-1562925562-1815db9768cd?q=80&w=800&auto=format&fit=crop" alt="Custom Printing" loading="lazy">
-                    <div class="category-overlay">
-                        <h3>Custom Printing</h3>
-                    </div>
-                </div>
-                <div class="category-card" onclick="window.location.href='pages/showpieces.html'">
-                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop" alt="Show Pieces" loading="lazy">
-                    <div class="category-overlay">
-                        <h3>Show Pieces</h3>
-                    </div>
-                </div>
-                <div class="category-card" onclick="window.location.href='pages/kurties.html'">
-                    <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?q=80&w=800&auto=format&fit=crop" alt="Elegant Kurties" loading="lazy">
-                    <div class="category-overlay">
-                        <h3>Elegant Kurties</h3>
-                    </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop" alt="Premium Retail">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Services Header -->
+    <section id="services" class="section bg-alt" style="padding-bottom: 20px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services & Dealings</h2>
+                <div class="underline"></div>
+                <p>Browse through our 12 specialized categories below. Click any product to customize sizes, colors, and see a live preview of your text!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 1. Apparels -->
+    <section id="cat-apparels" class="category-section">
+        <div class="container">
+            <h3 class="section-title">1. Apparels (T-shirts, Hoodies, Sports wear)</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Cotton T-Shirt', 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop', '100% breathable cotton.', true)">
+                    <div class="product-img-wrapper" style="background: #e2e8f0;">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="T-Shirt">
+                        <div class="custom-text-overlay global-name-display">YOUR NAME</div>
+                    </div><div class="product-info"><h3>Cotton T-Shirt</h3></div>
+                </div>
+                <div class="product-card" onclick="openModal('Premium Hoodie', 'https://images.unsplash.com/photo-1555529733-0e670560f8e1?q=80&w=600&auto=format&fit=crop', 'Thick winter hoodie.', true)">
+                    <div class="product-img-wrapper" style="background: #fff;">
+                        <img src="https://images.unsplash.com/photo-1555529733-0e670560f8e1?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Hoodie">
+                        <div class="custom-text-overlay global-name-display">YOUR NAME</div>
+                    </div><div class="product-info"><h3>Premium Hoodie</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 2. Uniforms -->
+    <section id="cat-uniforms" class="category-section bg-alt">
+        <div class="container">
+            <h3 class="section-title">2. Uniforms & Blazers</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('School/College Uniform', 'https://images.unsplash.com/photo-1580665961601-5285d3fdd13e?q=80&w=600&auto=format&fit=crop', 'Durable, stain-resistant uniform sets.', true)">
+                    <div class="product-img-wrapper" style="background: #fff;">
+                        <img src="https://images.unsplash.com/photo-1580665961601-5285d3fdd13e?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Uniform">
+                        <div class="custom-text-overlay global-name-display" style="color:#000; text-shadow:none; opacity:0.7;">LOGO</div>
+                    </div><div class="product-info"><h3>Institution Uniforms</h3></div>
+                </div>
+                <div class="product-card" onclick="openModal('Corporate Blazer', 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=600&auto=format&fit=crop', 'Tailored fit executive blazers.', true)">
+                    <div class="product-img-wrapper" style="background: #fff;">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Blazer">
+                    </div><div class="product-info"><h3>Corporate Blazers</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 3. Electronics -->
+    <section id="cat-electronics" class="category-section">
+        <div class="container">
+            <h3 class="section-title">3. Electronic Products</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Power Banks', 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=600&auto=format&fit=crop', 'High capacity portable chargers.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=600&auto=format&fit=crop" alt="Power Bank"></div><div class="product-info"><h3>Power Banks</h3></div>
+                </div>
+                <div class="product-card" onclick="openModal('Bluetooth Speakers', 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600&auto=format&fit=crop', 'Wireless premium speakers.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600&auto=format&fit=crop" alt="Speaker"></div><div class="product-info"><h3>Wireless Speakers</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 4. Trophies -->
+    <section id="cat-trophies" class="category-section bg-alt">
+        <div class="container">
+            <h3 class="section-title">4. Trophies and Mementoes</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Crystal Trophy', 'https://images.unsplash.com/photo-1568227653556-32d88e0b96ac?q=80&w=600&auto=format&fit=crop', 'Elegant engraved crystal glass.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1568227653556-32d88e0b96ac?q=80&w=600&auto=format&fit=crop" alt="Trophy"></div><div class="product-info"><h3>Crystal Glass Trophy</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 5. Pens -->
+    <section id="cat-pens" class="category-section">
+        <div class="container">
+            <h3 class="section-title">5. Pens and Pen Sets</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Executive Pen', 'https://images.unsplash.com/photo-1585336261022-680e295ce3fe?q=80&w=600&auto=format&fit=crop', 'Metallic ballpoint pen with laser-engraved names.', false)">
+                    <div class="product-img-wrapper" style="background: #fff;">
+                        <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Pen">
+                        <div class="custom-text-overlay global-name-display" style="font-size: 0.8rem; transform: translate(-50%, -50%) rotate(-45deg);">YOUR NAME</div>
+                    </div><div class="product-info"><h3>Executive Pen Box</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 6 & 7. Bags -->
+    <section id="cat-bags" class="category-section bg-alt">
+        <div class="container">
+            <h3 class="section-title" id="cat-custom-bags">6 & 7. Bags & Customised Bags (All Types)</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Laptop Backpack', 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop', 'Corporate laptop backpacks with logo print.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop" alt="Bag"></div><div class="product-info"><h3>Laptop Backpacks</h3></div>
+                </div>
+                <div class="product-card" onclick="openModal('Canvas Tote Bag', 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop', 'Eco friendly canvas totes.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;">
+                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Tote">
+                        <div class="custom-text-overlay global-name-display" style="color: #1a202c; text-shadow: none;">YOUR NAME</div>
+                    </div><div class="product-info"><h3>Custom Canvas Tote</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 8. Notebooks -->
+    <section id="cat-notebooks" class="category-section">
+        <div class="container">
+            <h3 class="section-title">8. Customised Notebooks & Brochures</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Leather Diary', 'https://images.unsplash.com/photo-1583335513577-224b5ed3ef7e?q=80&w=600&auto=format&fit=crop', 'Premium embossed diaries.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;">
+                        <img src="https://images.unsplash.com/photo-1583335513577-224b5ed3ef7e?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Notebook">
+                        <div class="custom-text-overlay global-name-display" style="color: #ecc94b; text-shadow: 1px 1px 2px #000;">YOUR NAME</div>
+                    </div><div class="product-info"><h3>Leather Bound Notebook</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 9. Leather -->
+    <section id="cat-leather" class="category-section bg-alt">
+        <div class="container">
+            <h3 class="section-title">9. Leather Products</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Leather Wallet', 'https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop', 'Genuine leather wallets.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop" alt="Wallet"></div><div class="product-info"><h3>Executive Leather Wallets</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 10. Mugs -->
+    <section id="cat-mugs" class="category-section">
+        <div class="container">
+            <h3 class="section-title">10. Mugs, Water Bottles & Table Tops</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Ceramic Mug', 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=600&auto=format&fit=crop', 'High quality ceramic mug.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;">
+                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Mug">
+                        <div class="custom-text-overlay global-name-display">YOUR NAME</div>
+                    </div><div class="product-info"><h3>Custom Ceramic Mug</h3></div>
+                </div>
+                <div class="product-card" onclick="openModal('Thermos Flask', 'https://images.unsplash.com/photo-1606240228302-39fe3d29cfc5?q=80&w=600&auto=format&fit=crop', 'Hot/Cold insulated flasks.', false)">
+                    <div class="product-img-wrapper" style="background:#fff;">
+                        <img src="https://images.unsplash.com/photo-1606240228302-39fe3d29cfc5?q=80&w=600&auto=format&fit=crop" style="mix-blend-mode: multiply;" alt="Flask">
+                        <div class="custom-text-overlay global-name-display" style="transform: translate(-50%, -20%) rotate(-85deg);">YOUR NAME</div>
+                    </div><div class="product-info"><h3>Insulated Water Bottles</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 11. Festival -->
+    <section id="cat-festival" class="category-section bg-alt">
+        <div class="container">
+            <h3 class="section-title">11. Customised Festival Gifting</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Diwali Hamper', 'https://images.unsplash.com/photo-1582142839970-2b9e04b60f65?q=80&w=600&auto=format&fit=crop', 'Premium festive boxes.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1582142839970-2b9e04b60f65?q=80&w=600&auto=format&fit=crop" alt="Festive"></div><div class="product-info"><h3>Festive Gift Hampers</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 12. Chocolates -->
+    <section id="cat-chocolate" class="category-section">
+        <div class="container">
+            <h3 class="section-title">12. Chocolates and Dry Fruits</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Premium Dry Fruits', 'https://images.unsplash.com/photo-1596591606975-97eedd929c28?q=80&w=600&auto=format&fit=crop', 'High quality sorted nuts.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1596591606975-97eedd929c28?q=80&w=600&auto=format&fit=crop" alt="Nuts"></div><div class="product-info"><h3>Premium Dry Fruit Boxes</h3></div>
+                </div>
+                <div class="product-card" onclick="openModal('Truffle Chocolates', 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=600&auto=format&fit=crop', 'Artisanal chocolates.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=600&auto=format&fit=crop" alt="Chocolate"></div><div class="product-info"><h3>Assorted Chocolate Truffles</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY: 13. Branded Tech -->
+    <section id="cat-branded-tech" class="category-section bg-alt">
+        <div class="container">
+            <h3 class="section-title">13. Branded Electronic Goods</h3>
+            <div class="product-grid">
+                <div class="product-card" onclick="openModal('Smart Watches', 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=600&auto=format&fit=crop', 'Branded smart wearables.', false)">
+                    <div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=600&auto=format&fit=crop" alt="Watch"></div><div class="product-info"><h3>Branded Smart Watches</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-left">
+                <div class="modal-image-container" id="modal-img-container">
+                    <img id="modal-img" class="modal-image" src="" alt="Product Preview">
+                    <div class="modal-preview-text" id="modal-preview-text">YOUR NAME</div>
+                </div>
+            </div>
+            <div class="modal-right">
+                <h3 id="modal-title">Product Name</h3>
+                <p class="desc" id="modal-desc">Product description goes here.</p>
+                
+                <div class="form-group" id="size-group">
+                    <label>Size Available</label>
+                    <div class="options-flex options-group">
+                        <button class="opt-btn">XS</button>
+                        <button class="opt-btn">S</button>
+                        <button class="opt-btn active">M</button>
+                        <button class="opt-btn">L</button>
+                        <button class="opt-btn">XL</button>
+                        <button class="opt-btn">XXL</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Color Available</label>
+                    <div class="options-flex">
+                        <div class="color-btn active" data-color="#ffffff" style="background: #ffffff; border-color:#000;"></div>
+                        <div class="color-btn" data-color="#e2e8f0" style="background: #e2e8f0;"></div>
+                        <div class="color-btn" data-color="#fca5a5" style="background: #fca5a5;"></div>
+                        <div class="color-btn" data-color="#93c5fd" style="background: #93c5fd;"></div>
+                        <div class="color-btn" data-color="#86efac" style="background: #86efac;"></div>
+                        <div class="color-btn" data-color="#fdba74" style="background: #fdba74;"></div>
+                        <div class="color-btn" data-color="#d8b4fe" style="background: #d8b4fe;"></div>
+                        <div class="color-btn" data-color="#1e293b" style="background: #1e293b;"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Quality Available</label>
+                    <div class="options-flex options-group">
+                        <button class="opt-btn active">Standard</button>
+                        <button class="opt-btn">Premium</button>
+                        <button class="opt-btn">Pro / Luxury</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Printing Available</label>
+                    <div class="options-flex options-group">
+                        <button class="opt-btn active">Front Only</button>
+                        <button class="opt-btn">Back Only</button>
+                        <button class="opt-btn">Both Sides</button>
+                        <button class="opt-btn">Wraparound</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Custom Text</label>
+                    <input type="text" id="modal-custom-input" class="custom-input" placeholder="Enter text to visualize...">
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="alert('Inquiry ready to be sent to Anvi Enterprises!')">Inquire About This Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="#" class="logo">
+                <a href="#home" class="logo">
                     Anvi<span class="text-gradient">Enterprises</span>
                 </a>
                 <p>Committed to providing premium quality products. Browse our catalog and experience the difference.</p>
@@ -98,17 +400,16 @@
             <div class="footer-links">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="pages/gifts.html">Premium Gifts</a></li>
-                    <li><a href="pages/printing.html">Custom Printing</a></li>
-                    <li><a href="pages/showpieces.html">Show Pieces</a></li>
-                    <li><a href="pages/kurties.html">Elegant Kurties</a></li>
+                    <li><a href="#cat-apparels">Apparels</a></li>
+                    <li><a href="#cat-uniforms">Uniforms</a></li>
+                    <li><a href="#cat-electronics">Electronics</a></li>
+                    <li><a href="#cat-custom-bags">Customized Bags</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h4>Get In Touch</h4>
                 <p>Email: contact@anvienterprises.com</p>
                 <p>Location: Premium Retail Space, India</p>
-                <p>Note: This is a showcase catalog only.</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -119,6 +420,90 @@
     </footer>
 
     <!-- Main JS -->
-    <script src="js/script.js?v=2"></script>
+    <script src="js/script.js?v=3"></script>
+    <script>
+        // Modal Logic Embedded for single page
+        const modal = document.getElementById('product-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const imgContainer = document.getElementById('modal-img-container');
+        const modalPreviewText = document.getElementById('modal-preview-text');
+        const modalCustomInput = document.getElementById('modal-custom-input');
+        
+        const globalNameInput = document.getElementById('global-name-input');
+        const allCardOverlays = document.querySelectorAll('.global-name-display');
+        const sizeGroup = document.getElementById('size-group');
+        let currentText = "YOUR NAME";
+
+        // Handle Global Input Event
+        if(globalNameInput) {
+            globalNameInput.addEventListener('input', (e) => {
+                currentText = e.target.value.trim() || 'YOUR NAME';
+                allCardOverlays.forEach(el => el.textContent = currentText);
+            });
+        }
+
+        // Handle Modal Input Event
+        modalCustomInput.addEventListener('input', (e) => {
+            currentText = e.target.value.trim() || 'YOUR NAME';
+            modalPreviewText.textContent = currentText;
+            if(globalNameInput) globalNameInput.value = e.target.value;
+            allCardOverlays.forEach(el => el.textContent = currentText);
+        });
+
+        // Toggle Option buttons
+        const optGroups = document.querySelectorAll('.options-group');
+        optGroups.forEach(group => {
+            const btns = group.querySelectorAll('.opt-btn');
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        });
+
+        // Color selection
+        const colorBtns = document.querySelectorAll('.color-btn');
+        colorBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                colorBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                imgContainer.style.backgroundColor = btn.dataset.color;
+            });
+        });
+
+        function openModal(title, imgSrc, desc, hasSizes) {
+            modalTitle.textContent = title;
+            modalImg.src = imgSrc;
+            modalDesc.textContent = desc;
+            
+            // Sync current text to modal
+            modalPreviewText.textContent = currentText;
+            modalCustomInput.value = currentText !== 'YOUR NAME' ? currentText : '';
+            
+            // Hide size option based on product
+            sizeGroup.style.display = hasSizes ? 'block' : 'none';
+
+            // Reset color to white
+            colorBtns.forEach(b => b.classList.remove('active'));
+            colorBtns[0].classList.add('active');
+            imgContainer.style.backgroundColor = '#ffffff';
+
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        // Close on clicking outside modal content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
